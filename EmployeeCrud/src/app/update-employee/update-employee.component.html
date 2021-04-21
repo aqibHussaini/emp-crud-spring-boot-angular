@@ -1,0 +1,98 @@
+
+<div class=" container">
+    <div class="row">
+        <div class="col-md-6 offset-md-2 mt-5">
+            <mat-card>
+                <mat-card-title class="text-center text-primary">
+                    <h4>Employee Form</h4>
+
+                </mat-card-title>
+                <mat-card-content>
+                    <form class="example-form">
+                        <div class="form-group">
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Enter Name</mat-label>
+                                <input matInput name="name" [(ngModel)]="obj.name" placeholder="Enter name">
+                            </mat-form-field>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>Enter Email</mat-label>
+                                        <input matInput type="email" [(ngModel)]="obj.email" name="email"
+                                            placeholder="Enter email">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>Enter Password</mat-label>
+                                        <input matInput type="password" [(ngModel)]="obj.password" name="password"
+                                            placeholder="Enter password">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mt-3">
+                                <div class="form-group">
+                                    <mat-radio-group aria-label="Gender" [(ngModel)]="obj.gendor" name="gendor">
+                                       <mat-radio-button value="male" >Male </mat-radio-button>
+                                            <mat-radio-button value="female"  >FeMale</mat-radio-button>
+                                    </mat-radio-group>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Favorite food</mat-label>
+                                        <mat-select [(ngModel)]="obj.food" name="food">
+                                            <mat-option value="{{obj.food}}" selected> {{obj.food}} </mat-option>
+                                            <mat-option value="Biryani" *ngIf="obj.food!='Biryani'"> Biryani
+                                            </mat-option>
+                                            <mat-option value="Mutton" *ngIf="obj.food!='Mutton'"> Mutton </mat-option>
+                                            <mat-option value="Beaf" *ngIf="obj.food!='Beaf'"> Beaf </mat-option>
+                                            <mat-option value="Chicken" *ngIf="obj.food!='Chicken'"> Chicken
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>Address</mat-label>
+                                        <textarea rows="5" [(ngModel)]="obj.address" matInput name="address"
+                                            placeholder="Address...">{{obj.address}}</textarea>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>About Employee</mat-label>
+                                        <textarea rows="5" [(ngModel)]="obj.about" matInput name="about"
+                                            placeholder="anything important about employee...">{{obj.about}}</textarea>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="example-button-row text-center">
+                            <button mat-raised-button color="primary" (click)="updateEmployee()">Update</button>
+                        </div>
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+
+</div>
